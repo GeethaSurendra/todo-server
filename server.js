@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use('/api', authRoutes);
 app.use('/api/todo', toDoRoutes);
 
-mongoose.connect(process.env.DB_URL).then(() => {
+mongoose.connect("mongodb+srv://thegeeth99:Mahadev99@cluster0.gukcpdk.mongodb.net/?appName=Cluster0").then(() => {
     console.log("DB Connected Successfully!");
 }).catch(err => {
     console.log(process.env.DB_URL)
