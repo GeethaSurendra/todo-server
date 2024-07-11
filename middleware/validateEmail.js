@@ -2,7 +2,7 @@ const validator = require('validator');
 
 const isValidDomain = (domain) => {
     const validDomains = ['gmail.com', 'yahoo.com', 'outlook.com'];
-    // Check if any character in the domain part is uppercase
+   
     if (/[A-Z]/.test(domain)) {
         console.log("Invalid domain format - Uppercase letters detected:", domain);
         return false;

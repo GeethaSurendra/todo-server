@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
-const toDoRoutes = require('./routes/toDoRoutes');
+const toDoRoutes = require('./routes/ToDoRoutes');
 const path = require('path');
 require('dotenv').config();
 
@@ -20,6 +20,7 @@ app.use('/api/todo', toDoRoutes);
 mongoose.connect(process.env.DB_URL).then(() => {
     console.log("DB Connected Successfully!");
 }).catch(err => {
+    console.log(process.env.DB_URL)
     console.log(err);
 });
 
