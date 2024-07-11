@@ -7,7 +7,7 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8888;
 
 app.use(cors());
 app.use(express.json());
@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use('/api', authRoutes);
 app.use('/api/todo', toDoRoutes);
 
+console.log(process.env)
 mongoose.connect("mongodb+srv://thegeeth99:Mahadev99@cluster0.gukcpdk.mongodb.net/?appName=Cluster0").then(() => {
     console.log("DB Connected Successfully!");
 }).catch(err => {
